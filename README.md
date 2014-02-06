@@ -1,3 +1,3 @@
-### Nodebeginner app
+### Node apps 
 
-A simple node app that goes along with the node-beginner book. 
+A series of node apps to practice, because I am bored of nodeschool.
