@@ -4,10 +4,18 @@ var url = require('url');
 function start(route, handle){
 	http.createServer(function(req, res){
 		var pathname = url.parse(req.url).pathname;
-		
+		var postData = '';
 		console.log('Request for' + pathname + 'received')
 
-		route(handle, pathname, res);
+		req.setEncoding('utf8');
+		req.addListener('data', function(postDataChunk) {
+			postData += postDataChunk;
+			console.log('added some postDataChunk: ' + postDataChunk);
+		});
+
+		req.addListener('end', function(){
+			route(handle, pathname, res, postData);
+		});
 	}).listen(8888);
 
 	console.log('server has started yo!');
