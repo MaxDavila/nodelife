@@ -5,6 +5,7 @@ function start(route, handle){
 	http.createServer(function(req, res){
 		var pathname = url.parse(req.url).pathname;
 		var postData = '';
+
 		console.log('Request for' + pathname + 'received')
 
 		req.setEncoding('utf8');
