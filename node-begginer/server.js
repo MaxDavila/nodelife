@@ -7,10 +7,7 @@ function start(route, handle){
 		
 		console.log('Request for' + pathname + 'received')
 
-		res.writeHead(200, { 'Content-Type' : 'text/plain'});
-		var content = route(handle, pathname);
-		res.write(content);
-		res.end();
+		route(handle, pathname, res);
 	}).listen(8888);
 
 	console.log('server has started yo!');
