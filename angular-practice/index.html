@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<title>Angular Practice</title>
+</head>
+<body ng-app="myApp">
+
+<div class="container" ng-controller="HomeController">
+	<h2>Welcome {{ name }}</h2>
+	<!-- <pre>{{ photos | jason }}</pre> -->
+	<div ng-view></div>
+	
+	<ul>
+		<li ng-repeat="photo in photos">
+			<img ng-src="{{ getPhotoUrl(photo) }}">
+		</li>
+	</ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+
